@@ -1,0 +1,10 @@
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.logo {
+    width: 250px;
+    height: 100px;
+}
