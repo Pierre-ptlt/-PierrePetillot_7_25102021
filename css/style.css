@@ -1,3 +1,7 @@
+header {
+    margin-bottom: 20px;
+}
+
 .logo-wrapper {
     display: flex;
     justify-content: center;
@@ -7,4 +11,81 @@
 .logo {
     width: 250px;
     height: 100px;
+}
+
+.recipeItem {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    max-width: 325px;
+    width: 100%;
+}
+
+.recipes {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.recipeImage {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(187, 177, 177);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.recipeContent {
+    background-color: rgb(230, 230, 230);
+    padding: 15px;
+    height: 150px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.recipeTitleWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.recipeTitle {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.timeWrapper {
+    display: flex;
+}
+
+.clock {
+    margin-top: 4px;
+    margin-right: 5px;
+}
+
+.recipeTime {
+    font-weight: 500;
+}
+
+.recipeTextWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipeIngredient {
+    font-size: 10px;
+    margin-top: -20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.recipeDescription {
+    font-size: 10px;
+    max-width: 130px;
+    margin-top: -20px;
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 450;
+    line-height: 1em;
 }
