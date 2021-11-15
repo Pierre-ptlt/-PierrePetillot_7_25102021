@@ -9,9 +9,9 @@ class RecipeList
 
     build(recipes)
     {
-    recipes.forEach(item => {
-        let recipe = new Recipe(item);
-        this.all.push(recipe);
+        recipes.forEach(item => {
+            let recipe = new Recipe(item);
+            this.all.push(recipe);
         });
     }
 
@@ -19,8 +19,7 @@ class RecipeList
     {
         let html = '';
         this.all.forEach(recipe => {
-            html = html += recipe.render();
-            console.log(recipe);
+            html += recipe.render();
         });
         console.log(html);
         document.getElementById("recipes").innerHTML = html;

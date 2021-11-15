@@ -15,10 +15,10 @@ class Recipe {
     }
 
     render()
-    {       let ingredientsHTML = '';
-            this.ingredients.forEach(element => {
-                let ingredient = new Ingredient(element);
-                ingredientsHTML += ingredient.render();
+    {   let ingredientsHTML = '';
+        this.ingredients.forEach(element => {
+            let ingredient = new Ingredient(element);
+            ingredientsHTML += ingredient.render();
         });
         return `
         <div class="recipeItem">
@@ -36,7 +36,7 @@ class Recipe {
                 </div>
                 <div class="recipeTextWrapper">
                     <div class="recipeIngredients">${ingredientsHTML}</div>
-                    <p class="recipeDescription">${this.description}</p>
+                    <span class="recipeDescription">${this.description}</span>
                 </div>
             </div>
         </div>
