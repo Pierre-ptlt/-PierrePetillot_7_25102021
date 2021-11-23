@@ -4,6 +4,9 @@ class Ingredient {
         this.ingredient = data.ingredient;
         this.quantity = data.quantity;
         this.unit = data.unit;
+        this.all = new Set();
+        this.selected = new Set();
+        this.filtered = new Set();
     }
 
     render()

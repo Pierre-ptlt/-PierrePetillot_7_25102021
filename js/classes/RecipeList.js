@@ -21,7 +21,6 @@ class RecipeList
         this.all.forEach(recipe => {
             html += recipe.render();
         });
-        console.log(html);
         document.getElementById("recipes").innerHTML = html;
     }
 }
