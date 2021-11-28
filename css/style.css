@@ -20,12 +20,14 @@ header {
     margin-bottom: 50px;
     max-width: 325px;
     width: 100%;
+    z-index: 1;
 }
 
 .recipes {
     flex-wrap: wrap;
     display: flex;
     margin-top: 40px;
+    z-index: 1;
 }
 
 .recipeImage {
@@ -97,26 +99,48 @@ header {
 }
 
 .ingredientsFilter {
+    position: relative;
     background-color: rgb(61, 131, 236);
     width: 180px;
     height: 50px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     border-radius: 5px;
     color: white;
     margin-left: 192px;
     cursor: pointer;
+    z-index: 99;
+}
+
+.filterDesign {
+    display: flex;
+    justify-content: space-around;
 }
 
 .ingredientsBar {
     background-color: rgb(61, 131, 236);
     border-radius: 5px;
-    border: 0px;
+    border: 0;
+    outline: none;
     width: 120px;
+    height: 40px;
     color: white;
 }
 
 .filterChevron {
-    margin-top: 15px;
+    margin-top: 17px;
     margin-right: 15px;
+}
+
+.filterContent {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.filterIngredient {
+    font-size: 6px;
 }
