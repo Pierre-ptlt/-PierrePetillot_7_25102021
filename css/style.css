@@ -113,8 +113,11 @@ header {
 }
 
 .filterDesign {
+    margin-top: 5px;
+    margin-left: 5px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .ingredientsBar {
@@ -125,22 +128,32 @@ header {
     width: 120px;
     height: 40px;
     color: white;
+    display: none;
+}
+
+.filterTitle {
+    font-size: 20px;
+    margin-top: 7px;
 }
 
 .filterChevron {
-    margin-top: 17px;
+    margin-top: 0px;
     margin-right: 15px;
 }
 
 .filterContent {
     margin-top: 10px;
     margin-left: 10px;
-    height: 370px;
-    display: flex;
+    height: 570px;
     flex-direction: column;
     flex-wrap: wrap;
+    display: none;
 }
 
 .filterIngredient {
     font-size: 6px;
+}
+
+.filtersSelected {
+    background-color: red;
 }

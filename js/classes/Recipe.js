@@ -1,5 +1,3 @@
-import Ingredient from "./Ingredient.js";
-
 class Recipe {
 
     constructor(data)
@@ -17,8 +15,7 @@ class Recipe {
     render()
     {   let ingredientsHTML = '';
         this.ingredients.forEach(element => {
-            let ingredient = new Ingredient(element);
-            ingredientsHTML += ingredient.render();
+            ingredientsHTML += this.renderIngredient(element);
         });
         return `
         <div class="recipeItem">
@@ -40,6 +37,27 @@ class Recipe {
                 </div>
             </div>
         </div>
+        `;
+    }
+
+    renderIngredient(ingredient)
+    {
+        if (!ingredient.unit)
+        {
+            ingredient.unit = '';
+        }
+
+        if (ingredient.unit == "grammes")
+        {
+            ingredient.unit = 'g';
+        }
+
+        if (!ingredient.quantity)
+        {
+            return `<p class="recipeIngredient"><b>${ingredient.ingredient}</b></p>
+        `;
+        }
+        return `<p class="recipeIngredient"><b>${ingredient.ingredient}:</b> ${ingredient.quantity} ${ingredient.unit}</p>
         `;
     }
 }
