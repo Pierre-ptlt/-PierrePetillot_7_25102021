@@ -145,15 +145,38 @@ header {
     margin-top: 10px;
     margin-left: 10px;
     height: 570px;
+    padding-bottom: 15px;
     flex-direction: column;
     flex-wrap: wrap;
     display: none;
+    overflow: scroll;
 }
 
 .filterIngredient {
-    font-size: 6px;
+    font-size: 20px;
+    width: 25%;
+    box-sizing: border-box;
 }
 
 .filtersSelected {
-    background-color: red;
+    margin-left: 192px;
+    margin-right: 200px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tagInSelection {
+    background-color: rgb(61, 131, 236);
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+    margin-right: 15px;
+}
+
+.selectionRemove {
+    margin-left: 7px;
 }
