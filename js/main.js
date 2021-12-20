@@ -6,7 +6,6 @@ let list = new RecipeList();
 let ingredientsList = new IngredientsList(list);
 list.build(recipes);
 list.display();
-ingredientsList.build();
-ingredientsList.listen();
+ingredientsList.setup();
 
 
