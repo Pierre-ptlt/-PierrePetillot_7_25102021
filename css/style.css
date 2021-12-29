@@ -166,7 +166,7 @@ header {
     flex-wrap: wrap;
 }
 
-.tagInSelection {
+.ingredientsTagInSelection {
     background-color: rgb(61, 131, 236);
     border-radius: 5px;
     color: white;
@@ -179,4 +179,47 @@ header {
 
 .selectionRemove {
     margin-left: 7px;
+}
+
+.appliancesFilter {
+    position: relative;
+    background-color: rgb(155, 245, 167);
+    width: 180px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+    margin-left: 392px;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.appliancesBar {
+    background-color: rgb(155, 245, 167);
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    width: 120px;
+    height: 40px;
+    color: white;
+    display: none;
+}
+
+.appliancesFilter {
+    font-size: 16px;
+    padding: 2px 7px;
+    min-width: 150px;
+    box-sizing: border-box;
+}
+
+.appliancesTagInSelection {
+    background-color: rgb(155, 245, 167);
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+    margin-right: 15px;
 }

@@ -1,28 +1,29 @@
-class IngredientsList
+class Appareils
 {
     constructor(list)
     {
         this.all = [];
         this.selected = [];
         this.filtered = [];
-        this.ingredientsDisplayed = [];
+        this.displayed = [];
         this.recipes = list;
         this.input = '';
+        this.type = "appliances";
     }
 
     createDropdown()
     {
-        document.getElementById('filters').innerHTML = `<div class="ingredientsFilter filterIngr" id="ingredientsFilter">
+        document.getElementById('filters').innerHTML = `<div class="${this.type}Filter" id="${this.type}Filter">
                     <div class="filterDesign">
-                    <h2 class="filterTitle" id="ingredientsTitle">Ingredients</h2>
-                    <input name="ingredientsBar" class="ingredientsBar filterIngr" id="ingredientsBar">
-                    <div id="chevronIngredients" class="chevron filterIngr">
+                    <h2 class="filterTitle" id="${this.type}Title">Appareils</h2>
+                    <input name="${this.type}Bar" class="${this.type}Bar ${this.type}Filter" id="${this.type}Bar">
+                    <div id="${this.type}Chevron" class="chevron ${this.type}Filter">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down filterChevron" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                         </svg>
                     </div>
                 </div>
-                <div class="filterContent" id="ingredientsFilterContent"></div>
+                <div class="filterContent" id="${this.type}FilterContent"></div>
                 </div>`;
     }
 
@@ -31,10 +32,10 @@ class IngredientsList
         this.filtered = [];
         items.forEach(recipe => {
 
-            recipe.ingredients.forEach(item => {
-                if (!this.filtered.includes(item.ingredient.toLowerCase()))
+            recipe.appliance.forEach(item => {
+                if (!this.filtered.includes(item.toLowerCase()))
                 {
-                    this.filtered.push(item.ingredient.toLowerCase());
+                    this.filtered.push(item.toLowerCase());
                 }
             });
         });
@@ -43,15 +44,15 @@ class IngredientsList
     displayAll()
     {
         let html = "";
-        this.ingredientsDisplayed.forEach(ingredient => {
-            html += `<span class="filterIngredient" data-id="${ingredient}">${ingredient}</span>`;
+        this.displayed.forEach(appliance => {
+            html += `<span class="appliancesFilter" data-id="${appliance}">${appliance}</span>`;
         });
-        document.getElementById("ingredientsFilterContent").innerHTML = html;
+        document.getElementById("appliancesFilterContent").innerHTML = html;
     }
 
     maskAll()
     {
-        document.getElementById("ingredientsFilterContent").innerHTML = "";
+        document.getElementById("appliancesFilterContent").innerHTML = "";
     }
 
     listen()
@@ -63,14 +64,14 @@ class IngredientsList
 
     listenForResearch()
     {
-        const el = document.getElementById("ingredientsBar");
-        const btn = document.getElementById("ingredientsTitle");
+        const el = document.getElementById("appliancesBar");
+        const btn = document.getElementById("appliancesTitle");
 
         document.querySelector('body').addEventListener('click', (e) =>
         {
-            if(e.target.getAttribute('id') != 'ingredientsTitle')
+            if(e.target.getAttribute('id') != 'appliancesTitle')
              {
-                if(e.target.getAttribute('id') != 'ingredientsBar')
+                if(e.target.getAttribute('id') != 'appliancesBar')
                 {
                     el.style.display = "none";
                     btn.style.display = "block";
@@ -81,10 +82,10 @@ class IngredientsList
 
     listenForOpenDropdown()
     {
-        const filter = document.getElementById('ingredientsFilter');
-        const bar = document.getElementById('ingredientsBar');
-        const btn = document.getElementById("ingredientsTitle");
-        const content = document.getElementById('ingredientsFilterContent');
+        const filter = document.getElementById('appliancesFilter');
+        const bar = document.getElementById('appliancesBar');
+        const btn = document.getElementById("appliancesTitle");
+        const content = document.getElementById('appliancesFilterContent');
 
         filter.addEventListener('click', () => {
             filter.style.width = "550px";
@@ -92,7 +93,7 @@ class IngredientsList
             btn.style.display = "none";
             content.style.display = "flex";
             bar.style.display = "block";
-            document.getElementById('chevronIngredients').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up filterChevron" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>';
+            document.getElementById('appliancesChevron').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up filterChevron" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>';
             this.displayAll();
             this.listenForSelection();
             this.listenForCloseDropdown();
@@ -102,23 +103,23 @@ class IngredientsList
 
     listenForCloseDropdown()
     {
-        const filter = document.getElementById('ingredientsFilter');
-        const bar = document.getElementById('ingredientsBar');
-        const btn = document.getElementById("ingredientsTitle");
-        const content = document.getElementById('ingredientsFilterContent');
+        const filter = document.getElementById('appliancesFilter');
+        const bar = document.getElementById('appliancesBar');
+        const btn = document.getElementById("appliancesTitle");
+        const content = document.getElementById('appliancesFilterContent');
         document.querySelector('body').addEventListener('click', (e) =>
         {
-            const closest = e.target.closest(".ingredientsFilter");
-            const closest2 = e.target.closest(".filterIngredient");
+            const closest = e.target.closest(".appliancesFilter");
+            const closest2 = e.target.closest(".filterAppareil");
 
-            if ((e.target.getAttribute("id") != 'ingredientsFilter') && !closest && !closest2)
+            if ((e.target.getAttribute("id") != 'appliancesFilter') && !closest && !closest2)
             {
                 filter.style.width = "180px";
                 filter.style.height = "50px";
                 content.style.display = "none";
                 bar.style.display = "none";
                 btn.style.display = "block";
-                document.getElementById('chevronIngredients').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down filterChevron" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>';
+                document.getElementById('appliancesChevron').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down filterChevron" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>';
                 this.maskAll();
             }
         });
@@ -126,14 +127,14 @@ class IngredientsList
 
     listenForSelection()
     {
-        document.querySelectorAll(".filterIngredient").forEach(ingredient => {
-            ingredient.addEventListener('click', () => {
-                this.selected.push(ingredient.getAttribute("data-id"));
+        document.querySelectorAll(".appliancesFilter").forEach(appliance => {
+            appliance.addEventListener('click', () => {
+                this.selected.push(appliance.getAttribute("data-id"));
                 this.displaySelection();
                 this.filterRecipes();
                 this.recipes.display();
                 this.collect(this.recipes.filtered);
-                this.ingredientsDisplayed = this.filtered;
+                this.displayed = this.filtered;
                 this.listenForUnselect();
             });
         });
@@ -150,7 +151,7 @@ class IngredientsList
                 this.filterRecipes();
                 this.recipes.display();
                 this.collect(this.recipes.filtered);
-                this.ingredientsDisplayed = this.filtered;
+                this.displayed = this.filtered;
                 this.listenForUnselect();
             });
         });
@@ -158,7 +159,7 @@ class IngredientsList
 
     listenForInput()
     {
-        document.getElementById("ingredientsBar").addEventListener('input', (e) => {
+        document.getElementById("appliancesBar").addEventListener('input', (e) => {
             this.input = e.target.value;
             this.filterInput();
         });
@@ -166,7 +167,7 @@ class IngredientsList
 
     filterInput()
     {
-        this.ingredientsDisplayed = this.filtered.filter(item => {
+        this.displayed = this.filtered.filter(item => {
             return (item.toLowerCase().indexOf(this.input) > -1);
         });
         this.displayAll();
@@ -190,9 +191,9 @@ class IngredientsList
         this.recipes.filtered = this.recipes.all.filter(recipe =>
             {
                 let i = 0;
-                recipe.ingredients.forEach(ingredient =>
+                recipe.appliance.forEach(appliance =>
                 {
-                    if (this.selected.includes(ingredient.ingredient.toLowerCase()))
+                    if (this.selected.includes(appliance.toLowerCase()))
                     {
                         i++;
                     }
@@ -209,9 +210,9 @@ class IngredientsList
     {
         this.createDropdown();
         this.collect(this.recipes.all);
-        this.all = this.ingredientsDisplayed = this.filtered;
+        this.all = this.displayed = this.filtered;
         this.listen();
     }
 }
 
-export default IngredientsList;
+export default Appareils;
