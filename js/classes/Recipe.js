@@ -15,7 +15,7 @@ class Recipe {
     render()
     {   let ingredientsHTML = '';
         this.ingredients.forEach(element => {
-            ingredientsHTML += this.renderIngredient(element);
+            ingredientsHTML += this.renderingredient(element);
         });
         return `
         <div class="recipeItem">
@@ -32,7 +32,7 @@ class Recipe {
                     </div>
                 </div>
                 <div class="recipeTextWrapper">
-                    <div class="recipeIngredients">${ingredientsHTML}</div>
+                    <div class="recipeingredients">${ingredientsHTML}</div>
                     <span class="recipeDescription">${this.description}</span>
                 </div>
             </div>
@@ -40,7 +40,7 @@ class Recipe {
         `;
     }
 
-    renderIngredient(ingredient)
+    renderingredient(ingredient)
     {
         if (!ingredient.unit)
         {
@@ -54,10 +54,10 @@ class Recipe {
 
         if (!ingredient.quantity)
         {
-            return `<p class="recipeIngredient"><b>${ingredient.ingredient}</b></p>
+            return `<p class="recipeingredient"><b>${ingredient.ingredient}</b></p>
         `;
         }
-        return `<p class="recipeIngredient"><b>${ingredient.ingredient}:</b> ${ingredient.quantity} ${ingredient.unit}</p>
+        return `<p class="recipeingredient"><b>${ingredient.ingredient}:</b> ${ingredient.quantity} ${ingredient.unit}</p>
         `;
     }
 }
