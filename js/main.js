@@ -4,12 +4,12 @@ import RecipeList from "./classes/RecipeList.js";
 import Appareils from "./classes/Appareils.js";
 
 let list = new RecipeList();
-let ingredientsList = new IngredientsList(list);
-let appliancesList = new Appareils(list);
+let ingredientsFilter = new IngredientsList(list);
+let appliancesFilter = new Appareils(list);
+list.addFilter(ingredientsFilter);
+list.addFilter(appliancesFilter);
 list.build(recipes);
 list.display();
-ingredientsList.setup();
-appliancesList.setup();
 
 
 

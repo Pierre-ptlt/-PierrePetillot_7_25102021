@@ -14,7 +14,7 @@ class Appareils
 
     createDropdown()
     {
-        document.getElementById('filters').innerHTML = `<div class="${this.type}Filter filter" id="${this.type}Filter">
+        document.getElementById('filters').innerHTML += `<div class="${this.type}Filter filter" id="${this.type}Filter">
                     <div class="filterDesign">
                     <h2 class="filterTitle" id="${this.type}Title">${this.type}s</h2>
                     <input name="${this.type}Bar" class="${this.type}Bar filter" id="${this.type}Bar">
@@ -32,14 +32,16 @@ class Appareils
     {
         this.filtered = [];
         items.forEach(recipe => {
-
-            recipe.appliance.forEach(item => {
-                if (!this.filtered.includes(item.toLowerCase()))
-                {
-                    this.filtered.push(item.toLowerCase());
-                }
-            });
+            if(!this.filtered.includes(recipe.appliance.toLowerCase()))
+            {
+                this.filtered.push(recipe.appliance.toLowerCase());
+            }
         });
+    }
+
+    createSelection()
+    {
+        document.getElementById("filtersSelected").innerHTML += `<div id="filtersSelected-${this.type}"></div>`;
     }
 
     displayAll()
@@ -136,9 +138,9 @@ class Appareils
                     this.displaySelection();
                     this.filterRecipes();
                     this.recipes.display();
-                    this.collect(this.recipes.filtered);
-                    this.displayed = this.filtered;
-                    this.listenForUnselect();
+                    // this.collect(this.recipes.filtered);
+                    // this.displayed = this.filtered;
+                    // this.listenForUnselect();
                 }
             });
         });
@@ -186,33 +188,22 @@ class Appareils
             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
           </svg></span>`;
         });
-        document.getElementById("filtersSelected").innerHTML = html;
+        document.getElementById(`filtersSelected-${this.type}`).innerHTML = html;
         this.listenForSelection();
     }
 
-    // filterRecipes()
-    // {
-    //     this.recipes.filtered = this.recipes.all.filter(recipe =>
-    //         {
-    //             let i = 0;
-    //             recipe.appliance.forEach(appliance =>
-    //             {
-    //                 if (this.selected.includes(appliance.toLowerCase()))
-    //                 {
-    //                     i++;
-    //                 }
-    //             });
-    //             if (i === this.selected.length)
-    //             {
-    //                 return true;
-    //             }
-    //             return false;
-    //         });
-    // }
+    filterRecipes(recipes)
+    {
+        return recipes.filter(recipe =>
+        {
+                return this.selected.includes(recipe.appliance.toLowerCase() );
+        });
+    }
 
     setup()
     {
         this.createDropdown();
+        this.createSelection();
         this.collect(this.recipes.all);
         this.all = this.displayed = this.filtered;
         this.listen();

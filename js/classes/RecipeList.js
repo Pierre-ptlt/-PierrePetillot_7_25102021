@@ -6,6 +6,12 @@ class RecipeList
     {
         this.all = [];
         this.filtered = [];
+        this.filters = [];
+    }
+
+    addFilter(filter)
+    {
+        this.filters.push(filter);
     }
 
     build(recipes)
@@ -15,6 +21,10 @@ class RecipeList
             this.all.push(recipe);
         });
         this.filtered = this.all;
+
+        this.filters.forEach(filter => {
+             filter.setup();
+        });
     }
 
     display()
@@ -28,6 +38,18 @@ class RecipeList
             html += recipe.render();
         });
         document.getElementById("recipes").innerHTML = html;
+    }
+
+    filter()
+    {
+        let list = this.filtered;
+
+        this.filters.forEach(filter => {
+            list = filter.filterRecipes(list);
+        });
+
+        this.filtered = list;
+        console.log(list);
     }
 }
 

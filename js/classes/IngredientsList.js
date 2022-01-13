@@ -13,7 +13,7 @@ class ingredientsList
 
     createDropdown()
     {
-        document.getElementById('filters').innerHTML = `<div class="${this.type}Filter filter" id="${this.type}Filter">
+        document.getElementById('filters').innerHTML += `<div class="${this.type}Filter filter" id="${this.type}Filter">
                     <div class="filterDesign">
                     <h2 class="filterTitle" id="${this.type}Title">${this.type}s</h2>
                     <input name="${this.type}Bar" class="${this.type}Bar filter" id="${this.type}Bar">
@@ -39,6 +39,11 @@ class ingredientsList
                 }
             });
         });
+    }
+
+    createSelection()
+    {
+        document.getElementById("filtersSelected").innerHTML += `<div id="filtersSelected-${this.type}"></div>`;
     }
 
     displayAll()
@@ -135,9 +140,9 @@ class ingredientsList
                     this.displaySelection();
                     this.filterRecipes();
                     this.recipes.display();
-                    this.collect(this.recipes.filtered);
-                    this.displayed = this.filtered;
-                    this.listenForUnselect();
+                    // this.collect(this.recipes.filtered);
+                    // this.displayed = this.filtered;
+                    // this.listenForUnselect();
                 }
             });
         });
@@ -185,13 +190,13 @@ class ingredientsList
             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
           </svg></span>`;
         });
-        document.getElementById("filtersSelected").innerHTML = html;
+        document.getElementById(`filtersSelected-${this.type}`).innerHTML = html;
         this.listenForSelection();
     }
 
-    filterRecipes()
+    filterRecipes(recipes)
     {
-        this.recipes.filtered = this.recipes.all.filter(recipe =>
+        return recipes.filter(recipe =>
             {
                 let i = 0;
                 recipe.ingredients.forEach(ingredient =>
@@ -212,9 +217,10 @@ class ingredientsList
     setup()
     {
         this.createDropdown();
+        this.createSelection();
         this.collect(this.recipes.all);
         this.all = this.displayed = this.filtered;
-        this.listen();
+        window.setTimeout(() => {this.listen();}, 500);
     }
 }
 
