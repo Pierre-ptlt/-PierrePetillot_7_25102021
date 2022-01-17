@@ -38,18 +38,23 @@ class RecipeList
             html += recipe.render();
         });
         document.getElementById("recipes").innerHTML = html;
+        this.filters.forEach(filter => {
+            filter.collect(filter.recipes.filtered);
+            filter.displayed = filter.filtered;
+            filter.input = '';
+        });
     }
 
-    filter()
+    filter(unselect = false)
     {
-        let list = this.filtered;
+        if (unselect)
+        {
+            this.filtered = this.all;
+        }
 
         this.filters.forEach(filter => {
-            list = filter.filterRecipes(list);
+            filter.filterRecipes(this.filtered);
         });
-
-        this.filtered = list;
-        console.log(list);
     }
 }
 

@@ -1,10 +1,10 @@
 import Filter from "./Filter.js";
 
-class ingredientsList extends Filter
+class Ustensils extends Filter
 {
     constructor(list)
     {
-        super(list, "ingredient", "Ingrédients");
+        super(list, "ustensil", "Ustensiles");
     }
 
     collect(items)
@@ -12,10 +12,10 @@ class ingredientsList extends Filter
         this.filtered = [];
         items.forEach(recipe => {
 
-            recipe.ingredients.forEach(item => {
-                if (!this.filtered.includes(item.ingredient.toLowerCase()))
+            recipe.ustensils.forEach(item => {
+                if (!this.filtered.includes(item.toLowerCase()))
                 {
-                    this.filtered.push(item.ingredient.toLowerCase());
+                    this.filtered.push(item.toLowerCase());
                 }
             });
         });
@@ -26,9 +26,9 @@ class ingredientsList extends Filter
         this.recipes.filtered = recipes.filter(recipe =>
             {
                 let i = 0;
-                recipe.ingredients.forEach(ingredient =>
+                recipe.ustensils.forEach(item =>
                 {
-                    if (this.selected.includes(ingredient.ingredient.toLowerCase()))
+                    if (this.selected.includes(item.toLowerCase()))
                     {
                         i++;
                     }
@@ -42,4 +42,4 @@ class ingredientsList extends Filter
     }
 }
 
-export default ingredientsList;
+export default Ustensils;
