@@ -90,7 +90,7 @@ class RecipeList
             let search = e.target.value;
             if (e.target.value.length > 2)
             {
-                this.research(search);
+                this.research(search.toLowerCase());
             }
             else
             {
@@ -104,6 +104,10 @@ class RecipeList
     {
          this.filtered = this.all.filter(recipe =>
          {
+            if(recipe.ingredients.find(ingredient => ingredient.ingredient.toLowerCase().includes(str)))
+            {
+                return true;
+            }
             if(recipe.name.toLowerCase().includes(str))
             {
                 return true;
