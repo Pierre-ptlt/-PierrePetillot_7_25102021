@@ -17,7 +17,7 @@ class Filter
         document.getElementById('filters').innerHTML += `<div class="${this.type}Filter filter" id="${this.type}Filter">
                     <div class="filterDesign">
                     <h2 class="filterTitle" id="${this.type}Title">${this.title}</h2>
-                    <input name="${this.type}Bar" class="${this.type}Bar filter" id="${this.type}Bar">
+                    <input name="${this.type}Bar" class="${this.type}Bar filter" id="${this.type}Bar" value="${this.input}">
                     <div id="${this.type}Chevron" class="chevron filter">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down filterChevron" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -115,6 +115,8 @@ class Filter
                 document.getElementById(this.type + 'Chevron').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down filterChevron" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>';
                 this.maskAll();
                 this.input = '';
+                document.getElementById(this.type + "Bar").value = '';
+                this.displayed = this.filtered;
             }
         });
     }

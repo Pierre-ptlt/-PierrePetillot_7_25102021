@@ -7,6 +7,7 @@ class RecipeList
         this.all = [];
         this.filtered = [];
         this.filters = [];
+        this.input = "Rechercher un ingrédient, appareil, ustensile ou une recette";
     }
 
     addFilter(filter)
@@ -25,13 +26,22 @@ class RecipeList
         this.filters.forEach(filter => {
              filter.setup();
         });
+
+        this.listenForSearch();
     }
 
     display()
     {
         if (this.filtered.length == 0)
         {
-            this.filtered = this.all;
+            document.getElementById("recipes").style.display = "none";
+            document.getElementById("error").style.display = "block";
+        }else
+        {
+            document.getElementById("recipes").style.display = "flex";
+            document.getElementById("error").style.display = "none";
+
+
         }
         let html = '';
         this.filtered.forEach(recipe => {
@@ -55,6 +65,56 @@ class RecipeList
         this.filters.forEach(filter => {
             filter.filterRecipes(this.filtered);
         });
+    }
+
+    listenForSearch()
+    {
+        const bar = document.getElementById("search-input");
+        bar.value = this.input;
+
+        bar.addEventListener('click', () => {
+            bar.value = '';
+        });
+
+        document.querySelector('body').addEventListener('click', (e) =>
+        {
+            if(e.target.getAttribute('id') == 'logo-wrapper')
+             {
+                bar.value = this.input;
+                this.filtered = this.all;
+                this.display();
+             }
+        });
+
+        bar.addEventListener('input', (e) => {
+            let search = e.target.value;
+            if (e.target.value.length > 2)
+            {
+                this.research(search);
+            }
+            else
+            {
+                this.filtered = this.all;
+                this.display();
+            }
+        });
+    }
+
+    research(str)
+    {
+         this.filtered = this.all.filter(recipe =>
+         {
+            if(recipe.name.toLowerCase().includes(str))
+            {
+                return true;
+            }
+            if(recipe.appliance.includes(str))
+            {
+                return true;
+            }
+            return !! recipe.ustensils.find(ustensil => ustensil.includes(str));
+         });
+         this.display();
     }
 }
 

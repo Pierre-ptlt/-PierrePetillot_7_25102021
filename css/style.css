@@ -1,3 +1,7 @@
+body {
+    padding: 25px;
+}
+
 header {
     margin-bottom: 20px;
 }
@@ -11,6 +15,10 @@ header {
 .logo {
     width: 250px;
     height: 100px;
+}
+
+.wrapper-all {
+    padding: 0px 100px;
 }
 
 .recipeItem {
@@ -94,7 +102,7 @@ header {
 }
 
 .filters {
-    margin: auto;
+    margin-left: 70px;
     height: 50px;
     display: flex;
 }
@@ -108,7 +116,6 @@ header {
     flex-direction: column;
     border-radius: 5px;
     color: white;
-    margin-left: 192px;
     cursor: pointer;
     z-index: 99;
 }
@@ -124,9 +131,9 @@ header {
 .ingredientBar {
     background-color: rgb(61, 131, 236);
     border-radius: 5px;
-    border: 0;
+    border: solid 0.1px white;
     outline: none;
-    width: 120px;
+    width: 300px;
     height: 40px;
     color: white;
     display: none;
@@ -160,9 +167,10 @@ header {
 }
 
 .filtersSelected {
-    margin-left: 192px;
+    margin-left: 70px;
     margin-right: 200px;
     margin-bottom: 30px;
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -209,9 +217,9 @@ header {
 .applianceBar {
     background-color: rgb(155, 245, 167);
     border-radius: 5px;
-    border: 0;
+    border: solid 0.1px white;
     outline: none;
-    width: 120px;
+    width: 300px;
     height: 40px;
     color: white;
     display: none;
@@ -259,9 +267,9 @@ header {
 .ustensilBar {
     background-color: rgb(252, 119, 31);;
     border-radius: 5px;
-    border: 0;
+    border: solid 0.1px white;
     outline: none;
-    width: 120px;
+    width: 300px;
     height: 40px;
     color: white;
     display: none;
@@ -290,4 +298,31 @@ header {
     padding: 2px 7px;
     min-width: 150px;
     box-sizing: border-box;
+}
+
+.searchBar {
+    padding: 0px 40px;
+    position: relative;
+}
+
+.search-input
+{
+    height: 55px;
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    color: rgb(143, 143, 143);
+    border: 0;
+    border-radius: 4px;
+}
+
+.loupe {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    font-weight: bolder;
+}
+
+.error {
+    display: none;
+    margin-top: 150px;
 }
