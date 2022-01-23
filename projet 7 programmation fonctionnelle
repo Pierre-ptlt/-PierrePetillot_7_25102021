@@ -1,1 +1,73 @@
-<mxfile host="app.diagrams.net" modified="2022-01-23T12:11:23.465Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36" version="16.4.5" etag="C9F6LHHTrEvQJBj1nchO" type="github"><diagram id="-XuDuL4YHxkfOY_T1SO-">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-01-23T13:12:33.794Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36" etag="_us57LV2tAD0yHYtHttG" version="16.4.5" type="github">
+  <diagram id="-XuDuL4YHxkfOY_T1SO-" name="Page-1">
+    <mxGraphModel dx="1186" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-1" value="Array des fonctions affichées (this.filtered) en filtrant parmi toutes les recette (this.all)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="260" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-2" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="295" as="sourcePoint" />
+            <mxPoint x="260" y="294.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-3" value="FILTER (renvoi true si)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zIqppZzPz4nw5Tya0hbS-2">
+          <mxGeometry x="0.1166" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-11" value="str est inclue dans les noms de recettes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="210" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-13" value="str est inclue dans les ingrédients" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="120" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-14" value="str est inclue dans les appareils" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="300" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-15" value="str est inclue dans les ustensiles" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="390" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-16" value="string de l&#39;input (str)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="135" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-17" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="210" as="sourcePoint" />
+            <mxPoint x="129.5" y="255" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="130" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-18" value="Passée en paramètre" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zIqppZzPz4nw5Tya0hbS-17">
+          <mxGeometry x="-0.0146" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-19" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="129.5" y="350" as="sourcePoint" />
+            <mxPoint x="129.5" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-21" value="Affichage des recettes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zIqppZzPz4nw5Tya0hbS-19">
+          <mxGeometry x="-0.16" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-20" value="Si moins de 3 caractères dans str :&amp;nbsp;&lt;br&gt;affiche this.all" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="470" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-22" value="Si aucune recette ne correspond : affiche message d&#39;erreur" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="540" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-23" value="si + de 3 caractères et que des recettes correspondent : affiche this.filtered" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="610" width="200" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
