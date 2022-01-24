@@ -78,7 +78,7 @@ class RecipeList
 
         document.querySelector('body').addEventListener('click', (e) =>
         {
-            if(e.target.getAttribute('id') == 'logo-wrapper')
+            if(e.target.getAttribute('id') == 'logo-wrapper' || e.target.getAttribute('id') == "filters" || e.target.getAttribute('id') == "filtersSelected")
              {
                 bar.value = this.input;
                 this.filtered = this.all;
@@ -102,22 +102,36 @@ class RecipeList
 
     research(str)
     {
-         this.filtered = this.all.filter(recipe =>
+        this.filtered = [];
+         for (const recipe of this.all)
          {
-            if(recipe.ingredients.find(ingredient => ingredient.ingredient.toLowerCase().includes(str)))
-            {
-                return true;
-            }
             if(recipe.name.toLowerCase().includes(str))
             {
-                return true;
+                this.filtered.push(recipe);
+                console.log(this.filtered);
             }
-            if(recipe.appliance.includes(str))
+            if(recipe.appliance.toLowerCase().includes(str))
             {
-                return true;
+                this.filtered.push(recipe);
+                console.log(this.filtered);
             }
-            return !! recipe.ustensils.find(ustensil => ustensil.includes(str));
-         });
+            for (const ustensil of recipe.ustensils)
+            {
+                if(ustensil.toLowerCase().includes(str))
+                {
+                    this.filtered.push(recipe);
+                    console.log(this.filtered);
+                }
+            }
+            for(const ingredient of recipe.ingredients)
+            {
+                if(ingredient.ingredient.toLowerCase().includes(str))
+                {
+                    this.filtered.push(recipe);
+                    console.log(this.filtered);
+                }
+            }
+         }
          this.display();
     }
 }
