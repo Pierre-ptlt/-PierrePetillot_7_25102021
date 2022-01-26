@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2022-01-23T13:12:33.794Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36" etag="_us57LV2tAD0yHYtHttG" version="16.4.5" type="github">
+<mxfile host="app.diagrams.net" modified="2022-01-26T09:27:46.525Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36" etag="IaE9WxjOXNxCEZ6lZEx1" version="16.4.5" type="github">
   <diagram id="-XuDuL4YHxkfOY_T1SO-" name="Page-1">
-    <mxGraphModel dx="1186" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1186" dy="588" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="zIqppZzPz4nw5Tya0hbS-1" value="Array des fonctions affichées (this.filtered) en filtrant parmi toutes les recette (this.all)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zIqppZzPz4nw5Tya0hbS-1" value="Array des recettes affichées (this.filtered) en filtrant parmi toutes les recette (this.all)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="30" y="260" width="200" height="70" as="geometry" />
         </mxCell>
         <mxCell id="zIqppZzPz4nw5Tya0hbS-2" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
