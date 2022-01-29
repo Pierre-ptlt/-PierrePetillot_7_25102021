@@ -95,8 +95,8 @@ class RecipeList
             else
             {
                 this.filtered = this.all;
-                this.display();
             }
+            this.display();
         });
     }
 
@@ -105,6 +105,10 @@ class RecipeList
          this.filtered = this.all.filter(recipe =>
          {
             if(recipe.ingredients.find(ingredient => ingredient.ingredient.toLowerCase().includes(str)))
+            {
+                return true;
+            }
+            if(recipe.description.toLowerCase().includes(str))
             {
                 return true;
             }
@@ -118,7 +122,6 @@ class RecipeList
             }
             return !! recipe.ustensils.find(ustensil => ustensil.includes(str));
          });
-         this.display();
     }
 }
 

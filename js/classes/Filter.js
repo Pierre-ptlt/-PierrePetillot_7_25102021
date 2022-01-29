@@ -81,7 +81,14 @@ class Filter
 
         filter.addEventListener('click', () => {
             filter.style.width = "550px";
-            filter.style.height = "300px";
+            if(this.type == "appliance")
+            {
+                filter.style.height = "170px";
+            }
+            else
+            {
+                filter.style.height = "300px";
+            }
             btn.style.display = "none";
             content.style.display = "flex";
             bar.style.display = "block";

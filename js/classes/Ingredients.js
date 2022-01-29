@@ -1,6 +1,6 @@
 import Filter from "./Filter.js";
 
-class ingredientsList extends Filter
+class Ingredients extends Filter
 {
     constructor(list)
     {
@@ -42,4 +42,4 @@ class ingredientsList extends Filter
     }
 }
 
-export default ingredientsList;
+export default Ingredients;
