@@ -7,7 +7,7 @@ class RecipeList
         this.all = [];
         this.filtered = [];
         this.filters = [];
-        this.input = "Rechercher un ingrédient, appareil, ustensile ou une recette";
+        this.input = "";
     }
 
     addFilter(filter)
@@ -70,21 +70,6 @@ class RecipeList
     listenForSearch()
     {
         const bar = document.getElementById("search-input");
-        bar.value = this.input;
-
-        bar.addEventListener('click', () => {
-            bar.value = '';
-        });
-
-        document.querySelector('body').addEventListener('click', (e) =>
-        {
-            if(e.target.getAttribute('id') == 'logo-wrapper' || e.target.getAttribute('id') == "filters" || e.target.getAttribute('id') == "filtersSelected")
-             {
-                bar.value = this.input;
-                this.filtered = this.all;
-                this.display();
-             }
-        });
 
         bar.addEventListener('input', (e) => {
             let search = e.target.value;
@@ -108,19 +93,23 @@ class RecipeList
             if(recipe.name.toLowerCase().includes(str))
             {
                 this.filtered.push(recipe);
-                console.log(this.filtered);
+                continue;
             }
             if(recipe.appliance.toLowerCase().includes(str))
             {
                 this.filtered.push(recipe);
-                console.log(this.filtered);
+                continue;
+            }
+            if(recipe.description.toLowerCase().includes(str))
+            {
+                this.filtered.push(recipe);
+                continue;
             }
             for (const ustensil of recipe.ustensils)
             {
                 if(ustensil.toLowerCase().includes(str))
                 {
                     this.filtered.push(recipe);
-                    console.log(this.filtered);
                 }
             }
             for(const ingredient of recipe.ingredients)
@@ -128,7 +117,6 @@ class RecipeList
                 if(ingredient.ingredient.toLowerCase().includes(str))
                 {
                     this.filtered.push(recipe);
-                    console.log(this.filtered);
                 }
             }
          }
