@@ -80,8 +80,8 @@ class RecipeList
             else
             {
                 this.filtered = this.all;
-                this.display();
             }
+            this.display();
         });
     }
 
@@ -120,7 +120,6 @@ class RecipeList
                 }
             }
          }
-         this.display();
     }
 }
 

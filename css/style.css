@@ -18,13 +18,14 @@ header {
 }
 
 .wrapper-all {
-    padding: 0px 100px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .recipeItem {
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
     margin-bottom: 50px;
     max-width: 325px;
     width: 100%;
@@ -33,9 +34,13 @@ header {
 
 .recipes {
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px;
     display: flex;
+    margin: 20px 0px;
     margin-top: 40px;
     z-index: 1;
+    max-width: unset;
 }
 
 .recipeImage {
@@ -102,7 +107,6 @@ header {
 }
 
 .filters {
-    margin-left: 70px;
     height: 50px;
     display: flex;
 }
@@ -167,10 +171,7 @@ header {
 }
 
 .filtersSelected {
-    margin-left: 70px;
-    margin-right: 200px;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin: 30px 0px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -301,16 +302,19 @@ header {
 }
 
 .searchBar {
-    padding: 0px 40px;
+    margin: 20px 0px;
+    max-width: unset;
+    padding: 0px;
     position: relative;
 }
 
 .search-input
 {
+    padding: 2px 10px;;
     height: 55px;
     width: 100%;
     background-color: rgb(230, 230, 230);
-    color: rgb(143, 143, 143);
+    color: rgb(78, 78, 78);
     border: 0;
     border-radius: 4px;
 }
