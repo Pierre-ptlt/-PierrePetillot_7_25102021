@@ -7,7 +7,7 @@ class RecipeList
         this.all = [];
         this.filtered = [];
         this.filters = [];
-        this.input = "Rechercher un ingrédient, appareil, ustensile ou une recette";
+        this.input = "";
     }
 
     addFilter(filter)
@@ -70,21 +70,6 @@ class RecipeList
     listenForSearch()
     {
         const bar = document.getElementById("search-input");
-        bar.value = this.input;
-
-        bar.addEventListener('click', () => {
-            bar.value = '';
-        });
-
-        document.querySelector('body').addEventListener('click', (e) =>
-        {
-            if(e.target.getAttribute('id') == 'logo-wrapper')
-             {
-                bar.value = this.input;
-                this.filtered = this.all;
-                this.display();
-             }
-        });
 
         bar.addEventListener('input', (e) => {
             let search = e.target.value;
