@@ -95,22 +95,10 @@ class RecipeList
                 this.filtered.push(recipe);
                 continue;
             }
-            if(recipe.appliance.toLowerCase().includes(str))
-            {
-                this.filtered.push(recipe);
-                continue;
-            }
             if(recipe.description.toLowerCase().includes(str))
             {
                 this.filtered.push(recipe);
                 continue;
-            }
-            for (const ustensil of recipe.ustensils)
-            {
-                if(ustensil.toLowerCase().includes(str))
-                {
-                    this.filtered.push(recipe);
-                }
             }
             for(const ingredient of recipe.ingredients)
             {
