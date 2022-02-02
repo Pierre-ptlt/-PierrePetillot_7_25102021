@@ -101,11 +101,6 @@ class RecipeList
             {
                 return true;
             }
-            if(recipe.appliance.includes(str))
-            {
-                return true;
-            }
-            return !! recipe.ustensils.find(ustensil => ustensil.includes(str));
          });
     }
 }
